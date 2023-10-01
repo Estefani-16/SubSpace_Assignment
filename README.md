@@ -56,13 +56,3 @@ This Express.js application serves as a blog analytics and search tool. It retri
    - `/api/blog-stats`: Provides analytics data about the blogs, including total number of blogs, longest title, blogs with "privacy" in the title, and unique blog titles.
    - `/api/blog-search?query=keyword`: Searches for blogs containing the specified keyword.
 
-## Achievements:
-- [x] Data retrieval from the third-party blog API.
-- [x] Calculation of total number of blogs, finding the longest title, and identifying blogs with "privacy" in the title.
-- [x] Implementation of blog search functionality with query parameter.
-- [x] Original implementation of error handling for various scenarios.
-- [x] Utilization of Lodash's `memoize` function for caching analytics and search results.
-  
----
-  
-*Note: This project demonstrates the successful implementation of the specified features and goals, meeting the requirements outlined in the assignment instructions.*

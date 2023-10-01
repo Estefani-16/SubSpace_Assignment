@@ -46,7 +46,7 @@ const get_blog_stats = async () => {
     };
 }
 
-// Cache the function results for 1 minutes (60000 milliseconds)
+// Cache the function results for 1 minutes 
 const cachingPeriod = 60000;
 const memoized_get_blog_stats = _.memoize(get_blog_stats, (...args) => JSON.stringify(args), () => Date.now() - cachingPeriod);
 
@@ -56,13 +56,12 @@ app.use((err, req, res, next) => {
     res.status(500).json({ error: 'Internal Server Error' });
 });
 
-// Endpoint to return required data about the blogs with memoization
+// Endpoint to return required data analysis about the blogs 
 app.get('/api/blog-stats', async (req, res, next) => {
     try {
         const blogStats = await memoized_get_blog_stats();
         res.json(blogStats);
     } catch (error) {
-        // Pass the error to the error handler middleware
         next(error);
     }
 });
@@ -88,17 +87,16 @@ const blog_search = async (keyword) => {
 
 };
 
-// Cache the function results for 1 minutes (60000 milliseconds)
+
 const memoized_blog_search = _.memoize(blog_search, (keyword) => keyword, () => Date.now() - cachingPeriod);
 
-// Endpoint to implement search functionality with memoization
+// Endpoint to implement search functionality 
 app.get('/api/blog-search', async (req, res, next) => {
     try {
         const keyword = req.query.keyword;
         const searchResults = await memoized_blog_search(keyword);
         res.json(searchResults);
     } catch (error) {
-        // Pass the error to the error handler middleware
         next(error);
     }
 });
