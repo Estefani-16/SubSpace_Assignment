@@ -54,5 +54,5 @@ This Express.js application serves as a blog analytics and search tool. It retri
 
 ### 2. **Endpoints:**
    - `/api/blog-stats`: Provides analytics data about the blogs, including total number of blogs, longest title, blogs with "privacy" in the title, and unique blog titles.
-   - `/api/blog-search?query=keyword`: Searches for blogs containing the specified keyword.
+   - `/api/blog-search?keyword=`: Searches for blogs containing the specified keyword.
 
